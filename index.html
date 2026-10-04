@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ananya · 18</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,500;0,900;1,500&family=Caveat:wght@600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg1:#ffe3ec;--bg2:#e6dcff;--ink:#4a1d3d;--rose:#ff5f93;--card:#ffffffb8;--line:#4a1d3d26;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg1:#2a0f26;--bg2:#170a2b;--ink:#ffe3ec;--card:#3a1636b8;--line:#ffe3ec33}}
+:root[data-theme="dark"]{--bg1:#2a0f26;--bg2:#170a2b;--ink:#ffe3ec;--card:#3a1636b8;--line:#ffe3ec33}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg1) linear-gradient(180deg,var(--bg1),var(--bg2)) fixed;color:var(--ink);font:400 17px/1.6 Inter,system-ui,sans-serif;overflow-x:hidden}
+#gl{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+main{position:relative;z-index:1}
+.wrap{max-width:760px;margin:0 auto;padding:0 20px}
+.d{font-family:'Bodoni Moda',Didot,Georgia,serif}.h{font-family:Caveat,cursive}
+.hero{height:100vh;height:100svh;display:flex;flex-direction:column;justify-content:flex-end;padding:0 20px 7vh;max-width:760px;margin:0 auto;cursor:pointer}
+.hero h1{font-size:clamp(2.2rem,9vw,3.6rem);line-height:1.05;font-weight:500;font-style:italic;margin:0 0 10px}
+.hero p{margin:0 0 20px;max-width:28em}
+.btn{align-self:flex-start;border:0;background:var(--ink);color:var(--bg1);font:600 1rem Inter,sans-serif;padding:15px 28px;border-radius:999px;cursor:pointer}
+.btn:focus-visible,.env:focus-visible{outline:3px solid var(--rose);outline-offset:3px}
+.a2,.sc{display:none}.open .a1{display:none}.open .a2{display:block}.open .sc{display:block;margin-top:14px;animation:bob 1.6s ease-in-out infinite}
+.open .btn{display:none}
+@keyframes bob{50%{transform:translateY(8px)}}
+section{padding:70px 0 6px}
+h2{font-size:clamp(1.9rem,6.4vw,2.7rem);line-height:1.1;font-weight:500;margin:0 0 6px}
+.sub{margin:0 0 26px;opacity:.85}
+.row{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 20px 22px;-webkit-overflow-scrolling:touch}
+.vc{flex:0 0 min(72vw,280px);scroll-snap-align:center;position:relative}
+.vbox{aspect-ratio:9/16;background:#1b0a17;border:5px solid #fff;border-radius:26px;overflow:hidden;display:grid;place-items:center;color:#ffe3ec;text-align:center;padding:18px;box-shadow:0 14px 34px #ff5f9340}
+.vbox video{width:100%;height:100%;object-fit:contain;display:block}
+.vc b{position:absolute;left:12px;bottom:-14px;background:#fff3a8;color:#4a1d3d;font:600 1.35rem Caveat,cursive;padding:2px 14px;border-radius:6px;transform:rotate(-3deg)}
+.notes{columns:2 230px;column-gap:22px}
+.st{break-inside:avoid;margin:0 0 22px;padding:22px 18px 16px;background:#fff3a8;color:#4a1d3d;transform:rotate(-1.5deg);position:relative;font:600 1.45rem/1.25 Caveat,cursive}
+.st:nth-child(4n+2){background:#ffd1dc;transform:rotate(1.6deg)}.st:nth-child(4n+3){background:#c9ecff;transform:rotate(-.8deg)}.st:nth-child(4n){background:#d6f7cf;transform:rotate(1.2deg)}
+.st::before{content:"";position:absolute;top:-9px;left:50%;width:70px;height:20px;margin-left:-35px;background:#ffffff99;transform:rotate(-2deg)}
+.st cite{display:block;font-style:normal;margin-top:8px;font-size:1.2rem;opacity:.8}
+.envw{perspective:900px;text-align:center}
+.env{position:relative;width:min(84vw,340px);height:210px;border:0;border-radius:8px;background:#ff8fb1;cursor:pointer;padding:0;display:block;margin:0 auto}
+.env .p{position:absolute;inset:0;background:#ff6f9f;border-radius:8px;clip-path:polygon(0 0,50% 56%,100% 0,100% 100%,0 100%)}
+.env .f{position:absolute;left:0;right:0;top:0;height:60%;background:#ff4f88;clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top;transition:transform .7s;z-index:2}
+.env .s{position:absolute;left:50%;top:44%;font-size:1.8rem;margin:-1rem 0 0 -1rem;z-index:3;transition:opacity .3s}
+.env.o .f{transform:rotateX(180deg);z-index:0}.env.o .s{opacity:0}
+.hint{margin:12px 0 0;opacity:.8}
+.paper{max-height:0;overflow:hidden;transition:max-height 1s ease,padding .4s;width:min(92vw,470px);margin:0 auto;background:#fffdf6;color:#4a1d3d;font:600 1.6rem/1.35 Caveat,cursive;white-space:pre-line;border-radius:4px;padding:0 24px}
+.paper.o{max-height:900px;padding:26px 24px;margin-top:16px}
+.rest{display:none}.open .rest{display:block;opacity:0;transition:opacity 1.4s}.show .rest{opacity:1}
+body:not(.open){overflow:hidden}
+.lv{width:min(62vw,230px);margin:0 auto 16px;box-shadow:none}
+#bar{position:fixed;top:calc(env(safe-area-inset-top,0px) + 8px);right:8px;z-index:9;display:none;flex-wrap:wrap;gap:6px;justify-content:flex-end;max-width:92vw}.ed #bar{display:flex}
+#bar button{border:0;border-radius:999px;background:var(--ink);color:var(--bg1);font:600 .85rem Inter,sans-serif;padding:8px 14px;cursor:pointer}#bar span{background:var(--card);padding:6px 12px;border-radius:999px;font-size:.8rem}
+.ed .vbox{cursor:pointer;outline:2px dashed var(--rose);outline-offset:-7px}.ed .st div,.ed .st cite,.ed #pt,.ed .vc b{outline:1px dotted var(--rose)}
+#bk{display:none;position:fixed;z-index:9;top:calc(env(safe-area-inset-top,0px) + 8px);right:8px;border:0;border-radius:999px;background:var(--ink);color:var(--bg1);font:600 .85rem Inter,sans-serif;padding:8px 14px;cursor:pointer}.pv #bk{display:block}
+.xb{display:none;position:absolute;top:-9px;right:-9px;width:30px;height:30px;border-radius:50%;border:2px solid #fff;background:#e8446f;color:#fff;font:700 15px/1 Inter,sans-serif;cursor:pointer;z-index:6;padding:0}.xb.in{top:8px;right:8px}.ed .xb{display:block}
+footer{padding:80px 20px 90px;text-align:center}footer .d{font-size:clamp(1.8rem,7vw,2.6rem);font-style:italic}
+</style>
+</head>
+<body>
+<canvas id="gl"></canvas>
+<button id="bk" type="button">✎ Wapas edit mode</button>
+<div id="bar"><button id="adds">🎵 gana</button><button id="addl">📝 lyrics</button><button id="addv">＋ video</button><button id="addw">＋ wish</button><button id="pv">👁 Ananya jaisa preview</button><button id="exp">💾 Final page save</button><span id="stt">Edit mode</span></div>
+<main id="top">
+  <div class="hero" id="hero" onclick="openGift()">
+    <h1 class="d a1">Ananya, ye tumhare liye hai</h1>
+    <h1 class="d a2" id="h2">Happy 18th, Ananya!</h1>
+    <p class="a1">Gift pe tap karo, ya neeche wala button dabao.</p>
+    <p class="a2" id="intro"></p>
+    <button class="btn" type="button">Gift kholo</button>
+    <div class="sc" aria-hidden="true">Neeche scroll karo ↓</div>
+  </div>
+  <div class="rest">
+  <div class="wrap"><section><h2 class="d">Tumhare apno ne kuch bheja hai</h2><p class="sub">Side me swipe karo, har video ek khaas insaan ki hai.</p></section></div>
+  <div class="row" id="vrow"></div>
+  <div class="wrap"><section><h2 class="d">Unhone tumhare liye likha</h2><p class="sub">Chhote chhote notes, dil se.</p><div class="notes" id="wl"></div></section>
+  <section class="envw"><h2 class="d">Ek chitthi</h2><p class="sub">Isko khol ke dekho.</p>
+    <button class="env" id="env" type="button" aria-expanded="false" aria-controls="paper"><span class="p"></span><span class="f"></span><span class="s">💗</span></button>
+    <div class="paper" id="paper" role="region" aria-live="polite"><div class="vbox lv" id="lv"></div><div id="pt"></div></div></section></div>
+  <footer><div class="d" id="foot"></div></footer>
+  </div>
+</main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script id="dsc">
+const FINAL=false;
+/* ====== YAHAN CONTENT BHARO (baaki code ko mat chhedo) ====== */
+const DATA={
+  name:"Ananya",
+  intro:"Ye gift tumhari magazine ke andar chhupa tha. Neeche jao, kuch log tumse kuch kehna chahte hain.",
+  letter:{src:""},
+  lyrics:"", /* synced lyrics (LRC) - edit mode me "📝 lyrics" button se paste karo */
+  song:{src:""}, /* gana: edit mode me "🎵 gana" button se lagao */
+  videos:[ /* {from:"Naam", src:"data:video/mp4;base64,..."} */
+    {from:"Dost 1",src:""},{from:"Dost 2",src:""},{from:"Dost 3",src:""},{from:"Ghar waale",src:""}],
+  wishes:[{from:"Naam",text:"Yahan unki wish aayegi."},{from:"Naam",text:"Yahan unki wish aayegi."},{from:"Naam",text:"Yahan unki wish aayegi."}],
+  note:"Yahan tumhara apna message aayega.\n\n— Naam",
+  foot:"Happy 18th, Ananya"
+};
+/* ============================================================ */
+</script>
+<script>
+const $=id=>document.getElementById(id),el=(t,c,x)=>{const e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e};
+const RMq=matchMedia('(prefers-reduced-motion:reduce)').matches;
+let ED=!FINAL&&(!/^https?:$/.test(location.protocol)||location.hash==='#edit'||location.search==='?edit');
+if(ED)document.body.classList.add('ed','open','show');
+const vids=[];let tm;
+const pick=(acc,cb)=>{const i=document.createElement('input');i.type='file';i.accept=acc;i.onchange=()=>i.files[0]&&cb(i.files[0]);i.click()};
+let db=null;function initDb(){if(db)return;try{db=new Promise((r,j)=>{const q=indexedDB.open('ananya-gift-v1',1);q.onupgradeneeded=()=>q.result.createObjectStore('kv');q.onsuccess=()=>r(q.result);q.onerror=j})}catch(e){}}
+if(ED)initDb();
+const put=(k,v)=>db&&db.then(d=>new Promise(r=>{const t=d.transaction('kv','readwrite');t.objectStore('kv').put(v,k);t.oncomplete=r})).then(()=>setS('✅ Auto-saved '+new Date().toLocaleTimeString()));
+const getAll=()=>db.then(d=>new Promise(r=>{const o={},c=d.transaction('kv').objectStore('kv').openCursor();c.onsuccess=()=>{const u=c.result;if(u){o[u.key]=u.value;u.continue()}else r(o)}}));
+const BL=new WeakMap();
+const del=k=>db&&db.then(d=>new Promise(r=>{const t=d.transaction('kv','readwrite');t.objectStore('kv').delete(k);t.oncomplete=r}));
+const xb=f=>{const b=el('button','xb','✕');b.type='button';b.title='Hatao';b.setAttribute('aria-label','Hatao');b.onclick=e=>{e.stopPropagation();f()};return b};
+function syncMedia(){DATA.videos.forEach((v,i)=>BL.has(v)?put('m:v'+i,BL.get(v)):del('m:v'+i));for(let i=0;i<3;i++)del('m:v'+(DATA.videos.length+i));saveT()}
+const rmItem=(arr,i,o)=>{if(o.src&&!confirm('Isko hata du?'))return;arr.splice(i,1);render();syncMedia()};
+const setS=t=>{$('stt').textContent=t};
+const saveT=()=>{clearTimeout(tm);tm=setTimeout(()=>put('txt',{w:DATA.wishes,note:DATA.note,vn:DATA.videos.map(v=>v.from),l:DATA.lyrics}),500)};
+function vslot(box,o,key,ph){box.textContent='';
+  if(o.src){const m=document.createElement('video');m.controls=true;m.playsInline=true;m.preload='metadata';m.src=o.src;m.addEventListener('play',()=>vids.forEach(x=>{if(x!==m)x.pause()}));vids.push(m);box.appendChild(m)}
+  else box.textContent=ED?'＋ Video lagao (yahan click karo)':ph;
+  if(ED){const ld=()=>pick('video/*',f=>{BL.set(o,f);o.src=URL.createObjectURL(f);put('m:'+key,f);render()});box.onclick=()=>{if(!o.src)ld()};box.ondblclick=ld}}
+function render(){vids.length=0;$('vrow').textContent='';$('wl').textContent='';
+  $('h2').textContent='Happy 18th, '+DATA.name+'!';$('intro').textContent=DATA.intro;$('foot').textContent=DATA.foot;
+  DATA.videos.forEach((v,i)=>{const c=el('div','vc'),b=el('div','vbox'),nm=el('b',null,v.from);vslot(b,v,'v'+i,'Ye video jaldi yahan aayegi 💌');
+    if(ED){nm.contentEditable=true;nm.oninput=()=>{v.from=nm.textContent;saveT()}}c.append(b,nm);if(ED)c.appendChild(xb(()=>rmItem(DATA.videos,i,v)));$('vrow').appendChild(c)});
+  DATA.wishes.forEach(w=>{const d=el('div','st'),t=el('div',null,w.text),ci=el('cite',null,'— '+w.from);
+    if(ED){t.contentEditable=ci.contentEditable=true;t.oninput=()=>{w.text=t.textContent;saveT()};ci.oninput=()=>{w.from=ci.textContent.replace(/^—\s*/,'');saveT()}}d.append(t,ci);if(ED)d.appendChild(xb(()=>rmItem(DATA.wishes,DATA.wishes.indexOf(w),w)));$('wl').appendChild(d)});
+  vslot($('lv'),DATA.letter,'lv','Yahan ek khaas video aayega 💌');
+  if(ED&&DATA.letter.src){const x=xb(()=>{DATA.letter.src='';BL.delete(DATA.letter);del('m:lv');render()});x.className='xb in';$('lv').appendChild(x)}$('pt').textContent=DATA.note;
+  if(ED){$('pt').contentEditable=true;$('pt').oninput=()=>{DATA.note=$('pt').textContent;saveT()}}}
+render();
+$('env').onclick=()=>{const o=$('env').classList.toggle('o');$('paper').classList.toggle('o',o);$('env').setAttribute('aria-expanded',o)};
+function restoreEd(){if(ED&&db){getAll().then(o=>{const t=o.txt;
+  if(t){DATA.wishes=t.w;DATA.note=t.note;if(t.l!=null)DATA.lyrics=t.l;t.vn.forEach((x,i)=>DATA.videos[i]?DATA.videos[i].from=x:DATA.videos.push({from:x,src:''}))}
+  DATA.videos.forEach((v,i)=>{if(o['m:v'+i]){BL.set(v,o['m:v'+i]);v.src=URL.createObjectURL(o['m:v'+i])}});
+  if(o['m:lv']){BL.set(DATA.letter,o['m:lv']);DATA.letter.src=URL.createObjectURL(o['m:lv'])}
+  if(o['m:song']){BL.set(DATA.song,o['m:song']);DATA.song.src=URL.createObjectURL(o['m:song'])}render();setS('✅ Pichla kaam wapas aa gaya')}).catch(()=>setS('⚠️ Auto-save nahi chal raha'))}}
+restoreEd();
+$('pv').onclick=()=>{ED=false;document.body.classList.remove('ed','open','show');document.body.classList.add('pv');if(window.resetGift)resetGift();render();scrollTo(0,0)};
+$('bk').onclick=()=>{ED=true;document.body.classList.remove('pv');document.body.classList.add('ed','open','show');render()};
+function enterEdit(){ED=true;initDb();document.body.classList.remove('pv');document.body.classList.add('ed','open','show');render();restoreEd()}
+if(!FINAL){const h=document.createElement('div');h.style.cssText='position:fixed;left:0;top:0;width:64px;height:64px;z-index:8';let ht;
+  h.addEventListener('pointerdown',()=>{ht=setTimeout(()=>{if(!ED)enterEdit()},1500)});['pointerup','pointercancel','pointerleave'].forEach(k=>h.addEventListener(k,()=>clearTimeout(ht)));document.body.appendChild(h)}
+$('addv').onclick=()=>{DATA.videos.push({from:'Naam',src:''});render();saveT()};
+$('addw').onclick=()=>{DATA.wishes.push({from:'Naam',text:'Yahan wish likho'});render();saveT()};
+$('exp').onclick=async()=>{setS('⏳ Final page ban rahi hai…');
+  const rd=b=>new Promise(r=>{const f=new FileReader();f.onload=()=>r(f.result);f.readAsDataURL(b)});let mb=0;
+  const cp=JSON.parse(JSON.stringify(DATA)),fix=async o=>{if(o.src&&o.src.startsWith('blob:')){const b=await (await fetch(o.src)).blob();mb+=b.size;o.src=await rd(b)}};
+  for(const v of cp.videos)await fix(v);await fix(cp.letter);await fix(cp.song);
+  const c=document.documentElement.cloneNode(true);c.querySelector('#dsc').textContent='const FINAL=true;\nconst DATA='+JSON.stringify(cp).replace(/</g,'\\u003c')+';';c.querySelector('body').className='';
+  const a=document.createElement('a');a.href=URL.createObjectURL(new Blob(['<!doctype html>\n'+c.outerHTML],{type:'text/html'}));a.download='ananya_final.html';a.click();
+  setS('✅ ananya_final.html download hui · media '+(mb/1048576).toFixed(0)+' MB'+(mb>90*1048576?' (bahut bhari, chhote clips lo)':''))};
+/* 3D gift scene (three.js) */
+window.openGift=function(){document.body.classList.add('open');setTimeout(()=>document.body.classList.add('show'),400)};
+(function(){
+if(!window.THREE)return;const T=THREE;let R3;
+try{R3=new T.WebGLRenderer({canvas:$('gl'),antialias:true,alpha:true})}catch(e){return}
+R3.setPixelRatio(Math.min(devicePixelRatio||1,2));
+const sc=new T.Scene(),cam=new T.PerspectiveCamera(45,1,.1,100),K=RMq?0:1;
+sc.add(new T.AmbientLight(0xffffff,.8));const dl=new T.DirectionalLight(0xffffff,.8);dl.position.set(3,5,6);sc.add(dl);
+const inner=new T.PointLight(0xffd27a,0,7);inner.position.set(0,.6,1);sc.add(inner);
+const M=(c,r=.5,m=0,tr=false)=>new T.MeshStandardMaterial({color:c,roughness:r,metalness:m,transparent:tr});
+const add=(p,geo,mat,x=0,y=0,z=0)=>{const m=new T.Mesh(geo,mat);m.position.set(x,y,z);p.add(m);return m};
+const G=new T.Group();sc.add(G);const gold=0xffc65c;
+add(G,new T.BoxGeometry(1.5,1.1,1.5),M(0xff7fa6,.4));
+add(G,new T.BoxGeometry(.3,1.12,1.52),M(gold,.3,.3));add(G,new T.BoxGeometry(1.52,1.12,.3),M(gold,.3,.3));
+const lid=new T.Group();lid.position.y=.7;G.add(lid);const lm=M(0xff5f93,.4,0,true),gm=M(gold,.3,.3,true);
+add(lid,new T.BoxGeometry(1.66,.3,1.66),lm);add(lid,new T.BoxGeometry(.3,.32,1.68),gm);add(lid,new T.BoxGeometry(1.68,.32,.3),gm);
+[-1,1].forEach(s=>{add(lid,new T.TorusGeometry(.26,.075,10,28),gm,s*.3,.38,0).rotation.z=s*.7});add(lid,new T.SphereGeometry(.13,16,12),gm,0,.36,0);
+function tex(t,col){const c=document.createElement('canvas');c.width=512;c.height=256;const x=c.getContext('2d');x.fillStyle=col;x.fillRect(0,0,512,256);x.fillStyle='#fff';x.font='bold 200px Georgia,serif';x.textAlign='center';x.textBaseline='middle';x.fillText(t,128,136);x.fillText(t,384,136);return new T.CanvasTexture(c)}
+const bal=[],cols=[0xff8fb1,0xb69cff,0xffd166,0x7fdcc8,0xff9e7a,0x8ec5ff];
+function balloon(col,x,y,z,s,txt,css){const g=new T.Group(),mat=txt?new T.MeshStandardMaterial({map:tex(txt,css),roughness:.25}):M(col,.25);
+  add(g,new T.SphereGeometry(.5,24,18),mat).scale.set(1,1.18,1);add(g,new T.ConeGeometry(.07,.14,8),M(col,.3),0,-.62,0).rotation.x=Math.PI;
+  add(g,new T.CylinderGeometry(.006,.006,1.3,4),M(0xffffff,.8),0,-1.27,0);
+  g.scale.setScalar(s);g.position.set(x,y,z);g.userData={x,y,p:Math.random()*6,v:(.1+Math.random()*.12)*K,num:!!txt};sc.add(g);bal.push(g)}
+for(let i=0;i<12;i++){let x=(Math.random()-.5)*5,z=-3+Math.random()*3.6;if(Math.abs(x)<1.25)z=-3;balloon(cols[i%6],x,-4.5+Math.random()*9,z,.55+Math.random()*.4)}
+balloon(0xff5f93,-.95,2.45,0,1.1,'1','#ff5f93');balloon(0xffb52e,.95,2.45,0,1.1,'8','#ffb52e');
+const hs=new T.Shape();hs.moveTo(0,.25);hs.bezierCurveTo(0,.25,-.05,0,-.25,0);hs.bezierCurveTo(-.55,0,-.55,.37,-.55,.37);hs.bezierCurveTo(-.55,.55,-.35,.77,0,.95);hs.bezierCurveTo(.35,.77,.55,.55,.55,.37);hs.bezierCurveTo(.55,.37,.55,0,.25,0);hs.bezierCurveTo(.1,0,0,.25,0,.25);
+const hg=new T.ExtrudeGeometry(hs,{depth:.25,bevelEnabled:true,bevelSize:.05,bevelThickness:.05,bevelSegments:2});hg.center();
+const hearts=[];for(let i=0;i<16;i++){const h=new T.Mesh(hg,M([0xff5f93,0xff8fb1,0xe8446f][i%3],.35));const s=.14+Math.random()*.16;h.scale.setScalar(s);
+  h.position.set((Math.random()-.5)*5,-5+Math.random()*10,-2+Math.random()*2.5);h.userData={x:h.position.x,p:Math.random()*6,v:(.25+Math.random()*.25)*K};sc.add(h);hearts.push(h)}
+const N=320,cp=new Float32Array(N*3),cc=new Float32Array(N*3),cv=[],cg=new T.BufferGeometry();
+cg.setAttribute('position',new T.BufferAttribute(cp,3));cg.setAttribute('color',new T.BufferAttribute(cc,3));
+const cm=new T.PointsMaterial({size:.13,vertexColors:true,transparent:true,depthWrite:false}),cf=new T.Points(cg,cm);cf.frustumCulled=false;sc.add(cf);
+const pal=[0xff7fa6,0xffc65c,0xb69cff,0x7fdcc8,0xffffff].map(h=>new T.Color(h));let cAge=99;
+function burst(){for(let i=0;i<N;i++){cp[i*3]=(Math.random()-.5)*.8;cp[i*3+1]=G.position.y+.6;cp[i*3+2]=(Math.random()-.5)*.8;
+  const a=Math.random()*6.283,s=1+Math.random()*3;cv[i]=[Math.cos(a)*s,3+Math.random()*4.5,Math.sin(a)*s];const c=pal[i%5];cc[i*3]=c.r;cc[i*3+1]=c.g;cc[i*3+2]=c.b}
+  cg.attributes.position.needsUpdate=true;cg.attributes.color.needsUpdate=true;cAge=0;cm.opacity=1}
+let opened=false,t0=0,mx=0,my=0;const clock=new T.Clock();
+window.resetGift=function(){opened=false;cAge=99;cm.opacity=0};
+window.openGift=function(){if(!opened){opened=true;t0=clock.elapsedTime;document.body.classList.add('open');setTimeout(()=>document.body.classList.add('show'),1300)}burst()};
+addEventListener('pointermove',e=>{mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5});
+function size(){const w=innerWidth,h=innerHeight;R3.setSize(w,h,false);cam.aspect=w/h;cam.position.set(0,.3,w/h<.8?10.5:8);cam.lookAt(0,0,0);cam.updateProjectionMatrix()}
+addEventListener('resize',size);size();
+(function tick(){const dt=Math.min(clock.getDelta(),.05),t=clock.elapsedTime,sy=scrollY;
+  const p=opened?Math.min(1,(t-t0)/1.3):0,e=1-Math.pow(1-p,3);
+  lid.position.y=.7+e*3;lid.rotation.z=e*.6;lid.rotation.y=e*1.5;lm.opacity=gm.opacity=1-e;inner.intensity=e*2.4;
+  G.position.y=-.4+sy*.012;G.rotation.y=Math.sin(t*.7)*.4+mx*.8;G.rotation.x=.14+my*.2;G.scale.setScalar(1+Math.sin(t*3)*.025*(1-e)*(1-K+K));
+  bal.forEach(b=>{const u=b.userData;if(u.num){b.rotation.y+=dt*.9*(K||.2);b.position.y=u.y+Math.sin(t*.9+u.p)*.12*K}else{b.position.y+=u.v*dt*3;if(b.position.y>4.8)b.position.y=-4.8;b.position.x=u.x+Math.sin(t*.8+u.p)*.15*K}});
+  hearts.forEach(h=>{const u=h.userData;h.position.y+=u.v*dt*3;if(h.position.y>5)h.position.y=-5;h.position.x=u.x+Math.sin(t+u.p)*.2*K;h.rotation.y+=dt*(K?1.2:0)});
+  if(cAge<4){cAge+=dt;for(let i=0;i<N;i++){cv[i][1]-=6*dt;cp[i*3]+=cv[i][0]*dt;cp[i*3+1]+=cv[i][1]*dt;cp[i*3+2]+=cv[i][2]*dt}cg.attributes.position.needsUpdate=true;cm.opacity=Math.max(0,1-cAge/4)}
+  R3.render(sc,cam);requestAnimationFrame(tick)})();
+})();
+</script>
+<script>
+/* ===== BACKGROUND GANA + VIDEO KE TIME VOLUME KAM ===== */
+(function(){
+  const NORMAL=0.7, LOW=0.12, FADE=0.3; /* NORMAL = normal volume, LOW = video chalte waqt, FADE = kitni smoothly badle (sec) */
+  let ctx=null,gain=null,au=null,cur='',vp=false,lines=[],lyKey=null,shown='',tok=0,raf=0;
+  const st=document.createElement('style');
+  st.textContent='#lyr{position:fixed;left:50%;bottom:calc(env(safe-area-inset-bottom,0px) + 22px);transform:translate(-50%,10px);z-index:7;max-width:min(88vw,520px);padding:11px 22px;border-radius:999px;background:rgba(20,10,16,.46);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);color:#fff;text-align:center;font-size:clamp(.95rem,3.6vw,1.2rem);line-height:1.35;font-style:italic;letter-spacing:.2px;text-shadow:0 1px 8px rgba(0,0,0,.35);opacity:0;pointer-events:none;transition:opacity .35s ease,transform .35s ease}#lyr.on{opacity:1;transform:translate(-50%,0)}#lyr:empty{display:none}#lym{position:fixed;inset:0;z-index:20;background:rgba(0,0,0,.55);display:flex;align-items:center;justify-content:center;padding:16px}#lym div{background:#fff;color:#222;border-radius:16px;padding:16px;width:min(560px,100%);display:flex;flex-direction:column;gap:10px;font:500 .85rem Inter,sans-serif}#lym textarea{height:46vh;border:1px solid #ddd;border-radius:10px;padding:10px;font:.85rem/1.5 ui-monospace,monospace;resize:none}#lym button{border:0;border-radius:999px;padding:9px 16px;font:600 .85rem Inter,sans-serif;cursor:pointer;background:#e8446f;color:#fff}#lym button.g{background:#eee;color:#222}';
+  document.head.appendChild(st);
+  const ly=document.createElement('div');ly.id='lyr';ly.className='d';ly.setAttribute('aria-live','off');document.body.appendChild(ly);
+  /* LRC parse: [mm:ss.xx] line  (timestamp na ho to lines gane me barabar baant di jaati hain) */
+  function parseLy(txt,dur){
+    const out=[],plain=[];
+    String(txt||'').split(/\r?\n/).forEach(r=>{
+      const ts=[...r.matchAll(/\[(\d+):(\d+(?:[.:]\d+)?)\]/g)];
+      const tx=r.replace(/\[[^\]]*\]/g,'').trim();
+      if(ts.length)ts.forEach(m=>out.push({t:(+m[1])*60+parseFloat(m[2].replace(':','.')),x:tx}));
+      else if(tx&&!/^\[/.test(r))plain.push(tx)});
+    if(out.length)return out.sort((a,b)=>a.t-b.t);
+    if(plain.length&&dur>0)return plain.map((x,i)=>({t:i*dur/plain.length,x}));
+    return[]}
+  function show(t){if(t===shown)return;shown=t;const k=++tok;ly.classList.remove('on');
+    setTimeout(()=>{if(k!==tok)return;ly.textContent=t;if(t)requestAnimationFrame(()=>ly.classList.add('on'))},t?200:0)}
+  function frame(){
+    raf=requestAnimationFrame(frame);
+    if(!au||au.paused||vp){show('');return}
+    const key=DATA.lyrics+'|'+(isFinite(au.duration)?1:0);
+    if(key!==lyKey){lyKey=key;lines=parseLy(DATA.lyrics,au.duration)}
+    if(!lines.length){show('');return}
+    const c=au.currentTime;let i=-1;for(let k=0;k<lines.length;k++){if(lines[k].t<=c+.12)i=k;else break}
+    show(i>=0?lines[i].x:'')}
+  const vidPlaying=()=>[...document.querySelectorAll('video')].some(v=>!v.paused&&!v.ended);
+  function sync(){vp=vidPlaying();if(!gain)return;gain.gain.setTargetAtTime(vidPlaying()?LOW:NORMAL,ctx.currentTime,FADE)}
+  function startSong(){
+    if(typeof ED!=='undefined'&&ED)return;
+    const src=DATA.song&&DATA.song.src;if(!src)return;
+    try{
+      if(!ctx){const AC=window.AudioContext||window.webkitAudioContext;ctx=new AC();au=new Audio();au.loop=true;au.preload='auto';au.playsInline=true;
+        gain=ctx.createGain();gain.gain.value=NORMAL;ctx.createMediaElementSource(au).connect(gain);gain.connect(ctx.destination)}
+      if(cur!==src){au.src=src;cur=src}
+      if(ctx.state==='suspended')ctx.resume();
+      if(au.paused){gain.gain.value=NORMAL;au.play().catch(()=>{})}
+      sync();
+      if(!raf)frame();
+    }catch(e){}
+  }
+  function stopSong(){if(au){au.pause();au.currentTime=0}show('')}
+  /* video ke play/pause/end pe volume badlo (media events bubble nahi karte, isliye capture) */
+  ['play','playing','pause','ended','emptied'].forEach(ev=>document.addEventListener(ev,sync,true));
+  /* gift kholte hi gana shuru */
+  const og=window.openGift;window.openGift=function(){startSong();return og&&og.apply(this,arguments)};
+  const orst=window.resetGift;window.resetGift=function(){stopSong();return orst&&orst.apply(this,arguments)};
+  /* edit mode: lyrics paste karne ka box */
+  const bl=document.getElementById('addl');
+  if(bl)bl.onclick=()=>{
+    const m=document.createElement('div');m.id='lym';
+    m.innerHTML='<div><b>Lyrics paste karo (LRC format, timestamps ke saath)</b><span>Jaise: [00:12.50] line yahan. Timestamp na ho to lines gane me barabar baant di jayengi (sync thoda off ho sakta hai).</span><textarea spellcheck="false"></textarea><span style="display:flex;gap:8px;justify-content:flex-end"><button class="g" type="button">Cancel</button><button type="button">Save</button></span></div>';
+    const ta=m.querySelector('textarea'),bs=m.querySelectorAll('button');ta.value=DATA.lyrics||'';
+    bs[0].onclick=()=>m.remove();
+    bs[1].onclick=()=>{DATA.lyrics=ta.value;lyKey=null;saveT();setS('📝 Lyrics save ho gaye');m.remove()};
+    document.body.appendChild(m)};
+  /* edit mode: gana chunne ka button */
+  const b=document.getElementById('adds');
+  if(b)b.onclick=()=>pick('audio/*',f=>{BL.set(DATA.song,f);DATA.song.src=URL.createObjectURL(f);put('m:song',f);setS('🎵 Gana laga diya: '+f.name)});
+})();
+</script>
+</body>
+</html>
