@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Ananya · 18</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,500;0,900;1,500&amp;family=Caveat:wght@600&amp;family=Inter:wght@400;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,500;0,900;1,500&amp;family=Caveat:wght@600&amp;family=Inter:wght@400;600&amp;display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 <style>
 :root{--bg1:#ffe3ec;--bg2:#e6dcff;--ink:#4a1d3d;--rose:#ff5f93;--card:#ffffffb8;--line:#4a1d3d26;
 box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
@@ -59,7 +59,16 @@ body:not(.open){overflow:hidden}
 footer{padding:80px 20px 90px;text-align:center}footer .d{font-size:clamp(1.8rem,7vw,2.6rem);font-style:italic}
 </style>
 <style>#lyr{position:fixed;left:50%;bottom:calc(env(safe-area-inset-bottom,0px) + 22px);transform:translate(-50%,10px);z-index:7;max-width:min(88vw,520px);padding:11px 22px;border-radius:999px;background:rgba(20,10,16,.46);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);color:#fff;text-align:center;font-size:clamp(.95rem,3.6vw,1.2rem);line-height:1.35;font-style:italic;letter-spacing:.2px;text-shadow:0 1px 8px rgba(0,0,0,.35);opacity:0;pointer-events:none;transition:opacity .35s ease,transform .35s ease}#lyr.on{opacity:1;transform:translate(-50%,0)}#lyr:empty{display:none}#lym{position:fixed;inset:0;z-index:20;background:rgba(0,0,0,.55);display:flex;align-items:center;justify-content:center;padding:16px}#lym div{background:#fff;color:#222;border-radius:16px;padding:16px;width:min(560px,100%);display:flex;flex-direction:column;gap:10px;font:500 .85rem Inter,sans-serif}#lym textarea{height:46vh;border:1px solid #ddd;border-radius:10px;padding:10px;font:.85rem/1.5 ui-monospace,monospace;resize:none}#lym button{border:0;border-radius:999px;padding:9px 16px;font:600 .85rem Inter,sans-serif;cursor:pointer;background:#e8446f;color:#fff}#lym button.g{background:#eee;color:#222}</style><style>#sdd{position:fixed;z-index:10;width:min(86vw,280px);display:none;padding:10px;border-radius:16px;background:var(--card);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);box-shadow:0 8px 28px #0003}#sdd.on{display:block}#sdd label{display:block;padding:22px 12px;border:2px dashed var(--rose);border-radius:12px;text-align:center;font:600 .85rem/1.4 Inter,sans-serif;color:var(--ink);cursor:pointer}#sdd.hv label{background:#ff5f9322}#sdd small{display:block;margin-top:4px;font-weight:400;opacity:.75}#sdd input{display:none}</style></head>
-<body class="">
+<body class=""><script>
+/* ?debug lagao to upar hara status dikhta hai */
+(function(){if(location.search.indexOf('debug')<0)return;var L=[];
+window.addEventListener('error',function(e){L.push('ERR: '+(e.message||'resource')+' '+(e.filename||(e.target&&e.target.src)||'')+':'+(e.lineno||''))},true);
+window.addEventListener('DOMContentLoaded',function(){var d=document.createElement('pre');
+d.style.cssText='position:fixed;left:0;right:0;top:0;z-index:99;margin:0;padding:6px;background:#000c;color:#0f0;font:11px/1.3 monospace;white-space:pre-wrap;max-height:50vh;overflow:auto;pointer-events:none';document.body.appendChild(d);
+function upd(){d.textContent='v5 | THREE:'+(window.THREE?'ok':'no')+' | 3D:'+(window.__3d?'start':'no')+' | openGift:'+typeof window.openGift+' | vids: '+[].map.call(document.querySelectorAll('#vrow video'),function(v){return (v.getAttribute('src')||'').slice(0,12)+'/rs'+v.readyState+(v.error?'/E'+v.error.code:'')}).join(', ')+'\n'+L.join('\n')}
+upd();setInterval(upd,1000)})})();
+</script>
+
 <canvas id="gl" width="774" height="1532"></canvas>
 <button id="bk" type="button">✎ Wapas edit mode</button>
 <div id="bar"><button id="adds">🎵 gana</button><button id="addl">📝 lyrics</button><button id="addv">＋ video</button><button id="addw">＋ wish</button><button id="pv">👁 Ananya jaisa preview</button><button id="spl">✂ Bade videos todo: OFF</button><button id="exp">💾 Final folder save</button><span id="stt">⏳ Final site ban rahi hai…</span></div>
@@ -81,263 +90,55 @@ footer{padding:80px 20px 90px;text-align:center}footer .d{font-size:clamp(1.8rem
     <div class="paper" id="paper" role="region" aria-live="polite"><div id="pt">Meri wish yeh hai ki duniya 🌎 ki sabse pyaari ladki ko ❤️ jo ki tu hai, use duniya ki har khushi mile 🌎❤️, sabka pyaar mile tu hamesha aise hi hasti rahe mere aur hum sabke saath rahe 🫂🤗 yeh sab karte hue maine jitni bhi photos dekhi mujhe sachme unhe dekh ke feel hua ki acche logo ke saath 😇 time ⌚ kab nikal jata hai pata hi nahi chalta hum aaj se 4.5 saal pehle mile the tab tu bacchi thi 👶🏻🍼 aur ab tu adult ho gai 🔞 per dimag baccho wala hi hai 😂In the end we all love you so much ❤️❤️❤️❤️❤️❤️Tu hamesha khush rahe happy happy sab ho jaye🥰Happy birthday Champakali ❤️🤗🍰🎂
 
 — Siddharth 💖</div></div></section></div>
-  <footer><div class="d ed2" id="foot">Happy 18th Birthday, Ananya</div></footer>
-  </div>
-</main>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-<script id="dsc">const FINAL=true;
-const DATA={"name":"Ananya","intro":"Ye gift tumhari magazine ke andar chhupa tha. Neeche jao, kuch log tumse kuch kehna chahte hain.","letter":{"src":""},"lyrics":"[00:02.80] I found a love for me\n[00:10.04] Oh, darling, just dive right in and follow my lead\n[00:17.70] Well, I found a girl, beautiful and sweet\n[00:25.47] Oh, I never knew you were the someone waitin' for me\n[00:31.86] 'Cause we were just kids when we fell in love\n[00:36.58] Not knowin' what it was\n[00:40.47] I will not give you up this time\n[00:48.03] Oh, darling, just kiss me slow\n[00:52.10] Your heart is all I own\n[00:55.73] And in your eyes, you're holding mine\n[01:02.40] Baby, I'm dancin' in the dark with you between my arms\n[01:13.62] Barefoot on the grass while listenin' to our favourite song\n[01:20.73] When you said you looked a mess, I whispered underneath my breath\n[01:27.64] But you heard it, \"Darling, you look perfect tonight\"\n[01:36.35] \n[01:41.04] Well, I found a woman, stronger than anyone I know\n[01:48.51] She shares my dreams, I hope that someday, I'll share her home\n[01:56.66] I found a love to carry more than just my secrets\n[02:04.38] To carry love, to carry children of our own\n[02:10.66] We are still kids, but we're so in love\n[02:15.50] Fightin' against all odds\n[02:19.17] I know we'll be alright this time\n[02:26.75] Darling, just hold my hand\n[02:30.18] Be my girl, I'll be your man\n[02:34.45] I see my future in your eyes\n[02:40.52] Oh, baby, I'm dancin' in the dark with you between my arms\n[02:50.05] \n[02:52.22] Barefoot on the grass while listenin' to our favourite song\n[02:59.38] When I saw you in that dress, lookin' so beautiful\n[03:05.17] I don't deserve this, darling, you look perfect tonight\n[03:14.48] \n[03:19.44] No, no, no\n[03:22.86] Mm\n[03:26.45] Baby, I'm dancin' in the dark with you between my arms\n[03:37.64] Barefoot on the grass while listenin' to our favourite song\n[03:44.90] I have faith in what I see, now I know I have met\n[03:50.76] An angel in person, and she looks perfect\n[03:58.31] I don't deserve this, you look perfect tonight\n[04:06.24] ","song":{"src":"song.mp3","name":"perfect.mp3"},"videos":[{"from":"Parva's Wishes","src":"video1.mp4"},{"from":"Khushi' Wishes","src":"video2.mp4"},{"from":"Navya's Wishes","src":"video3.mp4"},{"from":"Chanchal's Wishes ","src":"video4.mp4"}],"wishes":[{"from":"Parva (The Husband Material 🧔🏻‍♀️❤️)","text":"May every dream you carry in your heart ❤️ find its way to reality, and may every new chapter bring you happiness, 😊 growth and beautiful memories🫂😇"},{"from":"Navya (The Pyaarriii... One 😊)","text":"Happy Birthday, Ananya. ❤️God bless you always. May you always stay happy wherever you are.🫂♥️ Don't worry too much—just let life flow. 🫶🏻You'll definitely do something great, I'm sure of it.🦢🫂May all your dreams come true beautifully. Stay with your mom and your family. ❣️Everyone faces struggles in life, but I'm sure you'll do something good. Okay? Don't overthink. 💓Just stay happy.❤️I know we share a dream , the three of us, to live together someday.😚🥰 Maybe not right now, but, I'm sure someday it will come true. Even if we're not physically together, I'll always be with you mentally. Bye-bye, love you, happy birthday.🥹🧿🫂"},{"from":"Chanchal (The innocent Soul 😇)","text":"Meri bas ek hi wish hai ki teri life hamesha khushiyon se bhari rahe, tu jo bhi dream dekhe woh sab poore ho, aur chahe life humein kitna bhi door le jaaye… humari dosti kabhi door na ho. 🥹❤"},{"from":"Khushi (The mom of the group 🫂)","text":"I hope tera day bohot achha jaaye and tu hamesha aise hi khush rahe. 🫶🏻Distance chahe kitna bhi ho, it’s always nice to have a friend like you. I hope life mein tujhe woh saari khushiyan mile jo tu deserve karti hai, aur teri saari wishes poori ho. ✨Bas enjoy kar apna day, खूब सारी masti kar aur aise hi smile karti reh! 🥹❤️"}],"note":"Meri wish yeh hai ki duniya 🌎 ki sabse pyaari ladki ko ❤️ jo ki tu hai, use duniya ki har khushi mile 🌎❤️, sabka pyaar mile tu hamesha aise hi hasti rahe mere aur hum sabke saath rahe 🫂🤗 yeh sab karte hue maine jitni bhi photos dekhi mujhe sachme unhe dekh ke feel hua ki acche logo ke saath 😇 time ⌚ kab nikal jata hai pata hi nahi chalta hum aaj se 4.5 saal pehle mile the tab tu bacchi thi 👶🏻🍼 aur ab tu adult ho gai 🔞 per dimag baccho wala hi hai 😂In the end we all love you so much ❤️❤️❤️❤️❤️❤️Tu hamesha khush rahe happy happy sab ho jaye🥰Happy birthday Champakali ❤️🤗🍰🎂\n\n— Siddharth 💖","foot":"Happy 18th, Ananya"};</script>
+  <style>
+#gg .gcard{background:var(--card);border-radius:22px;padding:20px 18px;margin:0 0 18px;box-shadow:0 10px 26px #0002;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+#gg .gcard.solved{border:2px solid var(--rose)}
+#gg .gn{display:flex;align-items:center;gap:10px;font:600 1.5rem/1.1 Caveat,cursive;margin:0 0 10px}
+#gg .gn i{font-style:normal;font-size:1.7rem}
+#gg .gh{margin:0 0 8px;padding:10px 14px;border-radius:14px;background:#ff5f9314;font:400 .98rem/1.45 Inter,system-ui,sans-serif;animation:gin .4s ease}
+#gg .gh b{color:var(--rose);margin-right:6px}
+@keyframes gin{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+#gg .gr{display:flex;gap:8px;margin:12px 0 4px}
+#gg input{flex:1;min-width:0;border:2px solid var(--rose);background:transparent;color:var(--ink);border-radius:999px;padding:11px 16px;font:400 16px Inter,system-ui,sans-serif;outline:none}
+#gg input:focus{box-shadow:0 0 0 3px #ff5f9344}
+#gg button{border:0;border-radius:999px;font:600 .9rem Inter,system-ui,sans-serif;padding:11px 18px;cursor:pointer;background:var(--ink);color:var(--bg1)}
+#gg button.g2{background:transparent;color:var(--ink);border:2px solid var(--line);padding:9px 16px}
+#gg .gm{min-height:1.4em;margin:6px 2px 8px;font:600 .9rem Inter,system-ui,sans-serif}
+#gg .gcard.shake{animation:gsh .4s}
+@keyframes gsh{20%,60%{transform:translateX(-7px)}40%,80%{transform:translateX(7px)}}
+#gg .gok{font:600 1.2rem/1.3 Inter,system-ui,sans-serif}
+#gg .gok small{display:block;margin-top:4px;font-weight:400;opacity:.8;font-size:.9rem}
+#gg .gp{margin:0 0 14px;font:600 .85rem Inter,system-ui,sans-serif;opacity:.8}
+#gg .gend{padding:22px 18px;border-radius:22px;background:#ff5f9322;text-align:center;font:600 1.6rem/1.3 Caveat,cursive}
+.gcf{position:fixed;bottom:34vh;z-index:30;font-size:24px;pointer-events:none;animation:gcf 1.3s ease-out forwards}
+@keyframes gcf{to{transform:translate(var(--dx),-42vh) rotate(var(--r));opacity:0}}
+@media(prefers-reduced-motion:reduce){.gcf{display:none}#gg .gh,#gg .gcard.shake{animation:none}}
+</style>
+<section id="gg"><div class="wrap">
+<h2 class="d">Ab gifts ki baari 🎁</h2>
+<p class="sub">Har gift ke hints milenge. Guess karo ki andar kya hai!</p>
+<div class="gp" id="ggp"></div><div id="ggl"></div><div id="gge"></div>
+</div></section>
 <script>
-const $=id=>document.getElementById(id),el=(t,c,x)=>{const e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e};
-const RMq=matchMedia('(prefers-reduced-motion:reduce)').matches;
-let ED=!FINAL&&(!/^https?:$/.test(location.protocol)||location.hash==='#edit'||location.search==='?edit');
-const ed2s=()=>[...document.querySelectorAll('.ed2')];
-function heroClick(e){if(ED&&e.target.closest('.ed2'))return;openGift()}
-let tm2;const saveStatic=()=>{clearTimeout(tm2);tm2=setTimeout(()=>put('stxt',ed2s().map(e=>e.innerHTML)),500)};
-function setEdMode(on){ed2s().forEach(e=>{e.contentEditable=on?'true':'false'})}
-if(ED)document.body.classList.add('ed','open','show');
-ed2s().forEach(e=>e.addEventListener('input',saveStatic));
-setEdMode(ED);
-const vids=[];let tm;
-const pick=(acc,cb)=>{const i=document.createElement('input');i.type='file';i.accept=acc;i.onchange=()=>i.files[0]&&cb(i.files[0]);i.click()};
-let db=null;function initDb(){if(db)return;try{db=new Promise((r,j)=>{const q=indexedDB.open('ananya-gift-v1',1);q.onupgradeneeded=()=>q.result.createObjectStore('kv');q.onsuccess=()=>r(q.result);q.onerror=j})}catch(e){}}
-if(ED)initDb();
-const put=(k,v)=>db&&db.then(d=>new Promise(r=>{const t=d.transaction('kv','readwrite');t.objectStore('kv').put(v,k);t.oncomplete=r})).then(()=>setS('✅ Auto-saved '+new Date().toLocaleTimeString()));
-const getAll=()=>db.then(d=>new Promise(r=>{const o={},c=d.transaction('kv').objectStore('kv').openCursor();c.onsuccess=()=>{const u=c.result;if(u){o[u.key]=u.value;u.continue()}else r(o)}}));
-const BL=new WeakMap();
-const del=k=>db&&db.then(d=>new Promise(r=>{const t=d.transaction('kv','readwrite');t.objectStore('kv').delete(k);t.oncomplete=r}));
-const xb=f=>{const b=el('button','xb','✕');b.type='button';b.title='Hatao';b.setAttribute('aria-label','Hatao');b.onclick=e=>{e.stopPropagation();f()};return b};
-function syncMedia(){DATA.videos.forEach((v,i)=>BL.has(v)?put('m:v'+i,BL.get(v)):del('m:v'+i));for(let i=0;i<3;i++)del('m:v'+(DATA.videos.length+i));saveT()}
-const rmItem=(arr,i,o)=>{if(o.src&&!confirm('Isko hata du?'))return;arr.splice(i,1);render();syncMedia()};
-const setS=t=>{$('stt').textContent=t};
-const saveT=()=>{clearTimeout(tm);tm=setTimeout(()=>put('txt',{w:DATA.wishes,note:DATA.note,vn:DATA.videos.map(v=>v.from),l:DATA.lyrics}),500)};
-function vslot(box,o,key,ph){box.textContent='';
-  if(o.src&&o.parts&&!ED){
-    const bt=el('button','btn','▶ Tap karo, video chalao');bt.type='button';bt.style.cssText='align-self:center;justify-self:center';
-    bt.onclick=async()=>{bt.disabled=true;try{const ps=[];for(let k=1;k<=o.parts;k++){bt.textContent='⏳ Load ho raha hai '+k+'/'+o.parts;const r=await fetch(o.src.replace(/(\.\w+)$/,'_part'+k+'$1'));if(!r.ok)throw new Error(r.status);ps.push(await r.blob())}
-      o.src=URL.createObjectURL(new Blob(ps,{type:o.type||'video/mp4'}));o.parts=0;vslot(box,o,key,ph);const m=box.querySelector('video');if(m)m.play().catch(()=>{})}
-      catch(e){bt.disabled=false;bt.textContent='⚠️ Load nahi hua ('+(e&&e.message||'net')+'), dubara tap karo'}};
-    box.appendChild(bt);return}
-  if(o.src){const m=document.createElement('video');m.controls=true;m.playsInline=true;m.preload='metadata';m.src=o.src;m.addEventListener('play',()=>vids.forEach(x=>{if(x!==m)x.pause()}));vids.push(m);box.appendChild(m)}
-  else box.textContent=ED?'＋ Video lagao (yahan click karo)':ph;
-  if(ED){const ld=()=>pick('video/*',f=>{BL.set(o,f);o.src=URL.createObjectURL(f);put('m:'+key,f);render()});box.onclick=()=>{if(!o.src)ld()};box.ondblclick=ld}}
-function render(){vids.length=0;$('vrow').textContent='';$('wl').textContent='';
-
-  DATA.videos.forEach((v,i)=>{const c=el('div','vc'),b=el('div','vbox'),nm=el('b',null,v.from);vslot(b,v,'v'+i,'Ye video jaldi yahan aayegi 💌');
-    if(ED){nm.contentEditable=true;nm.oninput=()=>{v.from=nm.textContent;saveT()}}c.append(b,nm);if(ED)c.appendChild(xb(()=>rmItem(DATA.videos,i,v)));$('vrow').appendChild(c)});
-  DATA.wishes.forEach(w=>{const d=el('div','st'),t=el('div',null,w.text),ci=el('cite',null,'— '+w.from);
-    if(ED){t.contentEditable=ci.contentEditable=true;t.oninput=()=>{w.text=t.textContent;saveT()};ci.oninput=()=>{w.from=ci.textContent.replace(/^—\s*/,'');saveT()}}d.append(t,ci);if(ED)d.appendChild(xb(()=>rmItem(DATA.wishes,DATA.wishes.indexOf(w),w)));$('wl').appendChild(d)});
-  $('pt').textContent=DATA.note;
-  if(ED){$('pt').contentEditable=true;$('pt').oninput=()=>{DATA.note=$('pt').textContent;saveT()}}}
-function loadSong(f){if(!f||!/^audio\//.test(f.type))return;BL.set(DATA.song,f);DATA.song.src=URL.createObjectURL(f);DATA.song.name=f.name;put('m:song',f);setS('🎵 Gana laga diya: '+f.name)}
-render();
-$('env').onclick=()=>{const o=$('env').classList.toggle('o');$('paper').classList.toggle('o',o);$('env').setAttribute('aria-expanded',o)};
-function restoreEd(){if(ED&&db){getAll().then(o=>{const t=o.txt;
-  if(t){DATA.wishes=t.w;DATA.note=t.note;if(t.l!=null)DATA.lyrics=t.l;t.vn.forEach((x,i)=>DATA.videos[i]?DATA.videos[i].from=x:DATA.videos.push({from:x,src:''}))}
-  if(o.stxt){const els=ed2s();const n=Math.min(o.stxt.length,els.length);for(let i=0;i<n;i++)els[i].innerHTML=o.stxt[i]}
-  DATA.videos.forEach((v,i)=>{if(o['m:v'+i]){BL.set(v,o['m:v'+i]);v.src=URL.createObjectURL(o['m:v'+i])}});
-  if(o['m:lv']){BL.set(DATA.letter,o['m:lv']);DATA.letter.src=URL.createObjectURL(o['m:lv'])}
-  if(o['m:song']){BL.set(DATA.song,o['m:song']);DATA.song.src=URL.createObjectURL(o['m:song']);DATA.song.name=o['m:song'].name||''}render();setS('✅ Pichla kaam wapas aa gaya')}).catch(()=>setS('⚠️ Auto-save nahi chal raha'))}}
-restoreEd();
-$('pv').onclick=()=>{ED=false;document.body.classList.remove('ed','open','show');document.body.classList.add('pv');if(window.resetGift)resetGift();render();setEdMode(false);scrollTo(0,0)};
-$('bk').onclick=()=>{ED=true;document.body.classList.remove('pv');document.body.classList.add('ed','open','show');render();setEdMode(true)};
-function enterEdit(){ED=true;initDb();document.body.classList.remove('pv');document.body.classList.add('ed','open','show');render();setEdMode(true);restoreEd()}
-if(!FINAL){const h=document.createElement('div');h.style.cssText='position:fixed;left:0;top:0;width:64px;height:64px;z-index:8';let ht;
-  h.addEventListener('pointerdown',()=>{ht=setTimeout(()=>{if(!ED)enterEdit()},1500)});['pointerup','pointercancel','pointerleave'].forEach(k=>h.addEventListener(k,()=>clearTimeout(ht)));document.body.appendChild(h)}
-$('addv').onclick=()=>{DATA.videos.push({from:'Naam',src:''});render();saveT()};
-$('addw').onclick=()=>{DATA.wishes.push({from:'Naam',text:'Yahan wish likho'});render();saveT()};
-const SPL=()=>{try{return localStorage.getItem('spl')==='1'}catch(e){return false}};
-const spLbl=()=>{$('spl').textContent='✂ Bade videos todo: '+(SPL()?'ON':'OFF')};spLbl();
-$('spl').onclick=()=>{try{localStorage.setItem('spl',SPL()?'0':'1')}catch(e){}spLbl();setS(SPL()?'✂ ON: 20MB se bade videos tukdo me jayenge (GitHub web upload ke liye)':'OFF: videos poori ek file me jayenge (GitHub Desktop / Netlify ke liye)')};
-$('exp').onclick=async()=>{
-  /* videos/gana/letter ko base64 me nahi, alag files me rakhta hai: ananya_site/index.html + ananya_site/media/ */
-  let dir=null;
-  if(window.showDirectoryPicker){try{dir=await showDirectoryPicker({mode:'readwrite'})}catch(e){if(e&&e.name==='AbortError')return}}
-  setS('⏳ Final site ban rahi hai…');
-  try{
-  const cp=JSON.parse(JSON.stringify(DATA)),files=[];let mb=0;
-  const blobOf=async o=>BL.get(o)||(o.src&&o.src.startsWith('blob:')?await (await fetch(o.src)).blob():null);
-  const ext=(b,f)=>{const n=(b.name||'').split('.');const e=n.length>1?n.pop():'';const m=((b.type||'').split('/')[1]||'').replace('quicktime','mov').replace('mpeg','mp3').replace('x-m4a','m4a');return (e&&e.length<5?e:(m||f)).toLowerCase()};
-  const LIM=20*1024*1024,big=[];
-  const place=async(o,co,base,f,split=true)=>{const b=await blobOf(o);if(!b)return;const name=base+'.'+ext(b,f);mb+=b.size;co.src=name;
-    if(split&&SPL()&&b.size>LIM){const n=Math.ceil(b.size/LIM),pn=k=>name.replace(/(\.\w+)$/,'_part'+k+'$1');for(let k=0;k<n;k++)files.push([pn(k+1),b.slice(k*LIM,(k+1)*LIM)]);co.parts=n;co.type=b.type||'video/mp4'}
-    else{files.push([name,b]);if(b.size>25*1048576)big.push(name+' ('+(b.size/1048576).toFixed(0)+'MB)')}};
-  for(let i=0;i<DATA.videos.length;i++)await place(DATA.videos[i],cp.videos[i],'video'+(i+1),'mp4');
-  await place(DATA.letter,cp.letter,'letter','mp4');await place(DATA.song,cp.song,'song','mp3',false);
-  const c=document.documentElement.cloneNode(true);
-  c.querySelector('#dsc').textContent='const FINAL=true;\nconst DATA='+JSON.stringify(cp).replace(/</g,'\\u003c')+';';c.querySelector('body').className='';
-  const html='<!doctype html>\n'+c.outerHTML,tot=(mb/1048576).toFixed(0);
-  if(dir){
-    const w=async(d,name,data)=>{const h=await d.getFileHandle(name,{create:true}),ws=await h.createWritable();await ws.write(data);await ws.close()};
-    await w(dir,'index.html',new Blob([html],{type:'text/html'}));
-    const md=dir;let k=0;
-    for(const [n,b] of files){setS('⏳ '+(++k)+'/'+files.length+' file likh raha hoon…');await w(md,n,b)}
-    setS('✅ Folder ready: index.html + media files, sab ek hi folder me ('+files.length+' files, '+tot+' MB).'+(big.length?' ⚠️ 25MB se bade: '+big.join(', ')+' → GitHub web pe nahi chadhenge. GitHub Desktop use karo ya ✂ ON karo.':''));
-  }else{
-    setS('⏳ ZIP ban raha hai (folder picker is browser me nahi hai)…');
-    if(!window.JSZip)await new Promise((r,j)=>{const t=document.createElement('script');t.src='https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js';t.onload=r;t.onerror=j;document.head.appendChild(t)});
-    const z=new JSZip();z.file('index.html',html);files.forEach(([n,b])=>z.file(n,b));
-    const zb=await z.generateAsync({type:'blob',compression:'STORE'});
-    const a=document.createElement('a');a.href=URL.createObjectURL(zb);a.download='ananya_site.zip';a.click();
-    setS('✅ ananya_site.zip download hui ('+tot+' MB). Unzip karke folder Netlify Drop pe daalo.');
-  }
-  }catch(e){setS('⚠️ Save nahi hua: '+(e&&e.message||e))}
-};
-/* 3D gift scene (three.js) */
-window.openGift=function(){document.body.classList.add('open');setTimeout(()=>document.body.classList.add('show'),400)};
 (function(){
-if(!window.THREE)return;const T=THREE;let R3;
-try{R3=new T.WebGLRenderer({canvas:$('gl'),antialias:true,alpha:true})}catch(e){return}
-R3.setPixelRatio(Math.min(devicePixelRatio||1,2));
-const sc=new T.Scene(),cam=new T.PerspectiveCamera(45,1,.1,100),K=RMq?0:1;
-sc.add(new T.AmbientLight(0xffffff,.8));const dl=new T.DirectionalLight(0xffffff,.8);dl.position.set(3,5,6);sc.add(dl);
-const inner=new T.PointLight(0xffd27a,0,7);inner.position.set(0,.6,1);sc.add(inner);
-const M=(c,r=.5,m=0,tr=false)=>new T.MeshStandardMaterial({color:c,roughness:r,metalness:m,transparent:tr});
-const add=(p,geo,mat,x=0,y=0,z=0)=>{const m=new T.Mesh(geo,mat);m.position.set(x,y,z);p.add(m);return m};
-const G=new T.Group();sc.add(G);const gold=0xffc65c;
-add(G,new T.BoxGeometry(1.5,1.1,1.5),M(0xff7fa6,.4));
-add(G,new T.BoxGeometry(.3,1.12,1.52),M(gold,.3,.3));add(G,new T.BoxGeometry(1.52,1.12,.3),M(gold,.3,.3));
-const lid=new T.Group();lid.position.y=.7;G.add(lid);const lm=M(0xff5f93,.4,0,true),gm=M(gold,.3,.3,true);
-add(lid,new T.BoxGeometry(1.66,.3,1.66),lm);add(lid,new T.BoxGeometry(.3,.32,1.68),gm);add(lid,new T.BoxGeometry(1.68,.32,.3),gm);
-[-1,1].forEach(s=>{add(lid,new T.TorusGeometry(.26,.075,10,28),gm,s*.3,.38,0).rotation.z=s*.7});add(lid,new T.SphereGeometry(.13,16,12),gm,0,.36,0);
-function tex(t,col){const c=document.createElement('canvas');c.width=512;c.height=256;const x=c.getContext('2d');x.fillStyle=col;x.fillRect(0,0,512,256);x.fillStyle='#fff';x.font='bold 200px Georgia,serif';x.textAlign='center';x.textBaseline='middle';x.fillText(t,128,136);x.fillText(t,384,136);return new T.CanvasTexture(c)}
-const bal=[],cols=[0xff8fb1,0xb69cff,0xffd166,0x7fdcc8,0xff9e7a,0x8ec5ff];
-function balloon(col,x,y,z,s,txt,css){const g=new T.Group(),mat=txt?new T.MeshStandardMaterial({map:tex(txt,css),roughness:.25}):M(col,.25);
-  add(g,new T.SphereGeometry(.5,24,18),mat).scale.set(1,1.18,1);add(g,new T.ConeGeometry(.07,.14,8),M(col,.3),0,-.62,0).rotation.x=Math.PI;
-  add(g,new T.CylinderGeometry(.006,.006,1.3,4),M(0xffffff,.8),0,-1.27,0);
-  g.scale.setScalar(s);g.position.set(x,y,z);g.userData={x,y,p:Math.random()*6,v:(.1+Math.random()*.12)*K,num:!!txt};sc.add(g);bal.push(g)}
-for(let i=0;i<12;i++){let x=(Math.random()-.5)*5,z=-3+Math.random()*3.6;if(Math.abs(x)<1.25)z=-3;balloon(cols[i%6],x,-4.5+Math.random()*9,z,.55+Math.random()*.4)}
-balloon(0xff5f93,-.95,2.45,0,1.1,'1','#ff5f93');balloon(0xffb52e,.95,2.45,0,1.1,'8','#ffb52e');
-const hs=new T.Shape();hs.moveTo(0,.25);hs.bezierCurveTo(0,.25,-.05,0,-.25,0);hs.bezierCurveTo(-.55,0,-.55,.37,-.55,.37);hs.bezierCurveTo(-.55,.55,-.35,.77,0,.95);hs.bezierCurveTo(.35,.77,.55,.55,.55,.37);hs.bezierCurveTo(.55,.37,.55,0,.25,0);hs.bezierCurveTo(.1,0,0,.25,0,.25);
-const hg=new T.ExtrudeGeometry(hs,{depth:.25,bevelEnabled:true,bevelSize:.05,bevelThickness:.05,bevelSegments:2});hg.center();
-const hearts=[];for(let i=0;i<16;i++){const h=new T.Mesh(hg,M([0xff5f93,0xff8fb1,0xe8446f][i%3],.35));const s=.14+Math.random()*.16;h.scale.setScalar(s);
-  h.position.set((Math.random()-.5)*5,-5+Math.random()*10,-2+Math.random()*2.5);h.userData={x:h.position.x,p:Math.random()*6,v:(.25+Math.random()*.25)*K};sc.add(h);hearts.push(h)}
-const N=320,cp=new Float32Array(N*3),cc=new Float32Array(N*3),cv=[],cg=new T.BufferGeometry();
-cg.setAttribute('position',new T.BufferAttribute(cp,3));cg.setAttribute('color',new T.BufferAttribute(cc,3));
-const cm=new T.PointsMaterial({size:.13,vertexColors:true,transparent:true,depthWrite:false}),cf=new T.Points(cg,cm);cf.frustumCulled=false;sc.add(cf);
-const pal=[0xff7fa6,0xffc65c,0xb69cff,0x7fdcc8,0xffffff].map(h=>new T.Color(h));let cAge=99;
-function burst(){for(let i=0;i<N;i++){cp[i*3]=(Math.random()-.5)*.8;cp[i*3+1]=G.position.y+.6;cp[i*3+2]=(Math.random()-.5)*.8;
-  const a=Math.random()*6.283,s=1+Math.random()*3;cv[i]=[Math.cos(a)*s,3+Math.random()*4.5,Math.sin(a)*s];const c=pal[i%5];cc[i*3]=c.r;cc[i*3+1]=c.g;cc[i*3+2]=c.b}
-  cg.attributes.position.needsUpdate=true;cg.attributes.color.needsUpdate=true;cAge=0;cm.opacity=1}
-let opened=false,t0=0,mx=0,my=0;const clock=new T.Clock();
-window.resetGift=function(){opened=false;cAge=99;cm.opacity=0};
-window.openGift=function(){if(!opened){opened=true;t0=clock.elapsedTime;document.body.classList.add('open');setTimeout(()=>document.body.classList.add('show'),1300)}burst()};
-addEventListener('pointermove',e=>{mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5});
-function size(){const w=innerWidth,h=innerHeight;R3.setSize(w,h,false);cam.aspect=w/h;cam.position.set(0,.3,w/h<.8?10.5:8);cam.lookAt(0,0,0);cam.updateProjectionMatrix()}
-addEventListener('resize',size);size();
-(function tick(){const dt=Math.min(clock.getDelta(),.05),t=clock.elapsedTime,sy=scrollY;
-  const p=opened?Math.min(1,(t-t0)/1.3):0,e=1-Math.pow(1-p,3);
-  lid.position.y=.7+e*3;lid.rotation.z=e*.6;lid.rotation.y=e*1.5;lm.opacity=gm.opacity=1-e;inner.intensity=e*2.4;
-  G.position.y=-.4+sy*.012;G.rotation.y=Math.sin(t*.7)*.4+mx*.8;G.rotation.x=.14+my*.2;G.scale.setScalar(1+Math.sin(t*3)*.025*(1-e)*(1-K+K));
-  bal.forEach(b=>{const u=b.userData;if(u.num){b.rotation.y+=dt*.9*(K||.2);b.position.y=u.y+Math.sin(t*.9+u.p)*.12*K}else{b.position.y+=u.v*dt*3;if(b.position.y>4.8)b.position.y=-4.8;b.position.x=u.x+Math.sin(t*.8+u.p)*.15*K}});
-  hearts.forEach(h=>{const u=h.userData;h.position.y+=u.v*dt*3;if(h.position.y>5)h.position.y=-5;h.position.x=u.x+Math.sin(t+u.p)*.2*K;h.rotation.y+=dt*(K?1.2:0)});
-  if(cAge<4){cAge+=dt;for(let i=0;i<N;i++){cv[i][1]-=6*dt;cp[i*3]+=cv[i][0]*dt;cp[i*3+1]+=cv[i][1]*dt;cp[i*3+2]+=cv[i][2]*dt}cg.attributes.position.needsUpdate=true;cm.opacity=Math.max(0,1-cAge/4)}
-  R3.render(sc,cam);requestAnimationFrame(tick)})();
-})();
-</script><div style="position: fixed; left: 0px; top: 0px; width: 64px; height: 64px; z-index: 8;"></div>
-<script>
-/* ===== BACKGROUND GANA + VIDEO KE TIME VOLUME KAM ===== */
-(function(){
-  const NORMAL=0.7, LOW=0.12, FADE=0.3; /* NORMAL = normal volume, LOW = video chalte waqt, FADE = kitni smoothly badle (sec) */
-  let ctx=null,gain=null,au=null,cur='',vp=false,lines=[],lyKey=null,shown='',tok=0,raf=0;
-  const st=document.createElement('style');
-  st.textContent='#lyr{position:fixed;left:50%;bottom:calc(env(safe-area-inset-bottom,0px) + 22px);transform:translate(-50%,10px);z-index:7;max-width:min(88vw,520px);padding:11px 22px;border-radius:999px;background:rgba(20,10,16,.46);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);color:#fff;text-align:center;font-size:clamp(.95rem,3.6vw,1.2rem);line-height:1.35;font-style:italic;letter-spacing:.2px;text-shadow:0 1px 8px rgba(0,0,0,.35);opacity:0;pointer-events:none;transition:opacity .35s ease,transform .35s ease}#lyr.on{opacity:1;transform:translate(-50%,0)}#lyr:empty{display:none}#lym{position:fixed;inset:0;z-index:20;background:rgba(0,0,0,.55);display:flex;align-items:center;justify-content:center;padding:16px}#lym div{background:#fff;color:#222;border-radius:16px;padding:16px;width:min(560px,100%);display:flex;flex-direction:column;gap:10px;font:500 .85rem Inter,sans-serif}#lym textarea{height:46vh;border:1px solid #ddd;border-radius:10px;padding:10px;font:.85rem/1.5 ui-monospace,monospace;resize:none}#lym button{border:0;border-radius:999px;padding:9px 16px;font:600 .85rem Inter,sans-serif;cursor:pointer;background:#e8446f;color:#fff}#lym button.g{background:#eee;color:#222}';
-  document.head.appendChild(st);
-  const ly=document.createElement('div');ly.id='lyr';ly.className='d';ly.setAttribute('aria-live','off');document.body.appendChild(ly);
-  /* LRC parse: [mm:ss.xx] line  (timestamp na ho to lines gane me barabar baant di jaati hain) */
-  function parseLy(txt,dur){
-    const out=[],plain=[];
-    String(txt||'').split(/\r?\n/).forEach(r=>{
-      const ts=[...r.matchAll(/\[(\d+):(\d+(?:[.:]\d+)?)\]/g)];
-      const tx=r.replace(/\[[^\]]*\]/g,'').trim();
-      if(ts.length)ts.forEach(m=>out.push({t:(+m[1])*60+parseFloat(m[2].replace(':','.')),x:tx}));
-      else if(tx&&!/^\[/.test(r))plain.push(tx)});
-    if(out.length)return out.sort((a,b)=>a.t-b.t);
-    if(plain.length&&dur>0)return plain.map((x,i)=>({t:i*dur/plain.length,x}));
-    return[]}
-  function show(t){if(t===shown)return;shown=t;const k=++tok;ly.classList.remove('on');
-    setTimeout(()=>{if(k!==tok)return;ly.textContent=t;if(t)requestAnimationFrame(()=>ly.classList.add('on'))},t?200:0)}
-  function frame(){
-    raf=requestAnimationFrame(frame);
-    if(!au||au.paused||vp){show('');return}
-    const key=DATA.lyrics+'|'+(isFinite(au.duration)?1:0);
-    if(key!==lyKey){lyKey=key;lines=parseLy(DATA.lyrics,au.duration)}
-    if(!lines.length){show('');return}
-    const c=au.currentTime;let i=-1;for(let k=0;k<lines.length;k++){if(lines[k].t<=c+.12)i=k;else break}
-    show(i>=0?lines[i].x:'')}
-  const vidPlaying=()=>[...document.querySelectorAll('video')].some(v=>!v.paused&&!v.ended);
-  function sync(){vp=vidPlaying();const t=vp?LOW:NORMAL;if(gain)gain.gain.setTargetAtTime(t,ctx.currentTime,FADE);else if(au)au.volume=t}
-  function startSong(){
-    if(typeof ED!=='undefined'&&ED)return;
-    const src=DATA.song&&DATA.song.src;if(!src)return;
-    try{
-      const direct=location.protocol==='file:'&&!/^(blob|data):/.test(src);
-      if(!au){au=new Audio();au.loop=true;au.preload='auto';au.playsInline=true;
-        if(direct){au.volume=NORMAL}else{const AC=window.AudioContext||window.webkitAudioContext;ctx=new AC();gain=ctx.createGain();gain.gain.value=NORMAL;ctx.createMediaElementSource(au).connect(gain);gain.connect(ctx.destination)}}
-      if(cur!==src){au.src=src;cur=src}
-      if(ctx&&ctx.state==='suspended')ctx.resume();
-      if(au.paused){if(gain)gain.gain.value=NORMAL;else au.volume=NORMAL;au.play().catch(()=>{})}
-      sync();
-      if(!raf)frame();
-    }catch(e){}
-  }
-  function stopSong(){if(au){au.pause();au.currentTime=0}show('')}
-  /* video ke play/pause/end pe volume badlo (media events bubble nahi karte, isliye capture) */
-  ['play','playing','pause','ended','emptied'].forEach(ev=>document.addEventListener(ev,sync,true));
-  /* gift kholte hi gana shuru */
-  const og=window.openGift;window.openGift=function(){startSong();return og&&og.apply(this,arguments)};
-  const orst=window.resetGift;window.resetGift=function(){stopSong();return orst&&orst.apply(this,arguments)};
-  /* edit mode: lyrics paste karne ka box */
-  const bl=document.getElementById('addl');
-  if(bl)bl.onclick=()=>{
-    const m=document.createElement('div');m.id='lym';
-    m.innerHTML='<div><b>Lyrics paste karo (LRC format, timestamps ke saath)</b><span>Jaise: [00:12.50] line yahan. Timestamp na ho to lines gane me barabar baant di jayengi (sync thoda off ho sakta hai).</span><textarea spellcheck="false"></textarea><span style="display:flex;gap:8px;justify-content:flex-end"><button class="g" type="button">Cancel</button><button type="button">Save</button></span></div>';
-    const ta=m.querySelector('textarea'),bs=m.querySelectorAll('button');ta.value=DATA.lyrics||'';
-    bs[0].onclick=()=>m.remove();
-    bs[1].onclick=()=>{DATA.lyrics=ta.value;lyKey=null;saveT();setS('📝 Lyrics save ho gaye');m.remove()};
-    document.body.appendChild(m)};
-  /* edit mode: gana chunne ka button */
-  const b=document.getElementById('adds');
-  if(b){
-    const css=document.createElement('style');
-    css.textContent='#sdd{position:fixed;z-index:10;width:min(86vw,280px);display:none;padding:10px;border-radius:16px;background:var(--card);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);box-shadow:0 8px 28px #0003}#sdd.on{display:block}#sdd label{display:block;padding:22px 12px;border:2px dashed var(--rose);border-radius:12px;text-align:center;font:600 .85rem/1.4 Inter,sans-serif;color:var(--ink);cursor:pointer}#sdd.hv label{background:#ff5f9322}#sdd small{display:block;margin-top:4px;font-weight:400;opacity:.75}#sdd input{display:none}';
-    document.head.appendChild(css);
-    const dd=document.createElement('div');dd.id='sdd';
-    dd.innerHTML='<label>🎵 Gana yahan drop karo<small>ya click karke file chuno</small><input type="file" accept="audio/*,.mp3,.m4a,.wav,.ogg,.aac,.flac"></label>';
-    document.body.appendChild(dd);
-    const inp=dd.querySelector('input'),MT={mp3:'audio/mpeg',m4a:'audio/mp4',wav:'audio/wav',ogg:'audio/ogg',aac:'audio/aac',flac:'audio/flac'};
-    const close=()=>{dd.classList.remove('on','hv')};
-    const take=f=>{if(!f)return;
-      const e=(f.name.split('.').pop()||'').toLowerCase(),sm=dd.querySelector('small');
-      const fin=ty=>{loadSong(new File([f],f.name,{type:ty}));close();inp.value=''};
-      if(/^audio\//.test(f.type)||MT[e]){fin(/^audio\//.test(f.type)?f.type:MT[e]);return}
-      /* type/extension pehchan me nahi aaya: browser se hi check karwao ki chal sakti hai ya nahi */
-      sm.textContent='⏳ File check ho rahi hai…';
-      const u=URL.createObjectURL(f),t=new Audio();
-      t.onloadedmetadata=()=>{URL.revokeObjectURL(u);fin('audio/mpeg')};
-      t.onerror=()=>{URL.revokeObjectURL(u);sm.textContent='⚠️ Ye file chal nahi sakti (type: '+(f.type||'?')+', naam: '+f.name+')'};
-      t.src=u};
-    b.onclick=e=>{e.stopPropagation();if(dd.classList.contains('on')){close();return}
-      const r=b.getBoundingClientRect();dd.style.top=(r.bottom+8)+'px';dd.style.left=Math.max(8,Math.min(r.left,innerWidth-dd.offsetWidth-8-280+280))+'px';
-      dd.classList.add('on');dd.style.left=Math.max(8,Math.min(r.left,innerWidth-dd.offsetWidth-8))+'px';
-      dd.querySelector('small').textContent='ya click karke file chuno'};
-    inp.onchange=()=>take(inp.files[0]);
-    dd.addEventListener('dragover',e=>{e.preventDefault();dd.classList.add('hv')});
-    dd.addEventListener('dragleave',()=>dd.classList.remove('hv'));
-    dd.addEventListener('drop',e=>{e.preventDefault();e.stopPropagation();take(e.dataTransfer.files[0])});
-    ['dragover','drop'].forEach(k=>window.addEventListener(k,e=>e.preventDefault()));
-    document.addEventListener('click',e=>{if(!dd.contains(e.target))close()});
-    document.addEventListener('keydown',e=>{if(e.key==='Escape')close()});
-  }
-})();
-</script><div id="lyr" class="d" aria-live="off"></div><div id="sdd"><label>🎵 Gana yahan drop karo<small>ya click karke file chuno</small><input type="file" accept="audio/*,.mp3,.m4a,.wav,.ogg,.aac,.flac"></label></div>
-
-
-<script>
-/* FINAL site: kuch bhi editable nahi */
-(function(){if(typeof FINAL==='undefined'||!FINAL)return;
-const f=()=>document.querySelectorAll('[contenteditable]').forEach(e=>e.removeAttribute('contenteditable'));
-f();new MutationObserver(f).observe(document.body,{subtree:true,childList:true,attributes:true,attributeFilter:['contenteditable']});
-const st=document.createElement('style');st.textContent='*{-webkit-tap-highlight-color:transparent}.ed2,.d,#pt{outline:none!important}';document.head.appendChild(st)})();
-</script>
-</body></html>
+var G=[
+{e:'👜',t:'Purse',a:['purse','bag','handbag','hand bag','parse','purs','पर्स','बैग'],
+ h:['Ye wo cheez hai jiske bina ladkiyan ghar se nikalti hi nahi 😌','Isme phone, tissue, kangi aur na jaane kya kya rehta hai','Kandhe pe latkate hain ya haath me pakadte hain. Naam "P" se shuru hota hai']},
+{e:'🐒',t:'Monkey soft toy',d:'Bachpan wale dost ki yaad 🥹',a:['monkey','bandar','bander','banadar','vanar','monky','monkey toy','बंदर'],
+ h:['Ye soft toy tumhara purana dost jaisa hai 🥹','Ye ped pe chadhta hai','English me naam "mon..." se shuru hota hai, Hindi me "ban..." se']},
+{e:'🐶',t:'Dog soft toy',a:['dog','kutta','kuta','puppy','doggy','kutiya','kutte','dog toy','कुत्ता'],
+ h:['Ye sabse wafadaar dost hai, hamesha saath rehta hai 🥹','Ise insaan ka sabse achha dost kehte hain','Poonch hilata hai aur bhow bhow karta hai. English me "d_g", Hindi me "k_tta"']},
+{e:'💅',t:'Nails',d:'2 packets',a:['nail','nails','nailpaint','nail paint','nail art','nailart','nail extension','press on nails','nakhun','nakhoon','naakhun','नाखून'],
+ h:['Ye tumhare haathon ko aur pyaara bana dega ✨','Ye 2 packets hain. Salon jaane ki zarurat hi nahi','Ungliyon pe lagte hain, rang aur design wale. English me "n_ils", Hindi me "nakhun"']},
+{e:'👗',t:'Kurti',d:'2 alag alag kurtis',a:['kurti','kurtis','kurta','kurtiyan','kurtiya','कुर्ती'],
+ h:['Ye pehni jaati hai, aur tumhare liye ek nahi, do hain 😍','College ya function, ye dono me chal jaati hai','Dupatta ke saath bhi achhi lagti hai aur bina ke bhi. Naam "K" se shuru hota hai aur "i" pe khatam']},
+{e:'🌸',t:'Perfume',a:['perfume','parfum','perfum','perfumes','scent','fragrance','deo','deodorant','itr','इत्र'],
+ h:['Ye dikhta nahi, bas mehsoos hota hai 🌸','Tum kahin se guzro aur log palat ke dekhein, uski wajah ye hai','Chhidakte hain aur khushboo aati hai. English me "p_rf_me"']},
+{e:'💋',t:'Lip gloss',d:'Khushboo wala 🍓',a:['lip gloss','lipgloss','gloss','lip glos','lipglos','lip glow','लिप ग्लॉस'],
+ h:['Ye chhoti si cheez purse me aaram se aa jaati hai 💋','jaha lagti hai waha chamak deti hai, aur isme khushboo bhi hai 🍓','Lipstick ki chamakdaar behen jaisi. English me "lip g___"']},
+{e:'👖',t:'Skirt',d:'Jeans wali (denim) skirt',a:['skirt','skirts','skrit','skert','jeans skirt','denim skirt','mini skirt','jeans','denim','स्कर्ट'],
+ h:['Ye bhi pehnne wali cheez hai, par kurti ya pant nahi hai','Ye kamar se neeche ki taraf jaati hai, aur isme dono pair alag alag nahi hote','Jeans ke kapde ki bani hai. Naam "S" se shuru hota hai. English me "s_irt"']},
+{e:'🐙',t:'Octopus soft toy',a:['octopus','octopuss','octopas','octapus','octo','ashtbhuja','ऑक्टोपस'],
+ h:['Is soft toy ke haath bahut zyada hain. Kitne? Ginke batao 😄','Ye samundar me rehta hai aur iske 8 haath hote hain','Naam "O" se shuru hota hai. English me "octo..."']},
+{e:'💐',t:'Flower wala clutcher',a:['clutcher','clutch','clutchar','clip','hair clip','hairclip','claw clip','claw','jaw clip','banana clip','catcher','hair clutcher','क्लचर'],
+ h:['Ye baalon ke liye hai 💐','Isme phool bane hain aur ye baalon ko ek jhatke me pakad leta hai','Hair clip jaisa hi hai, bas bada wala (claw). Naam "C" se shuru 
