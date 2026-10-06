@@ -1,4 +1,5 @@
 <!doctype html>
+<!-- build v7: __init3d + gift guess game -->
 <html lang="hi"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -65,7 +66,7 @@ footer{padding:80px 20px 90px;text-align:center}footer .d{font-size:clamp(1.8rem
 window.addEventListener('error',function(e){L.push('ERR: '+(e.message||'resource')+' '+(e.filename||(e.target&&e.target.src)||'')+':'+(e.lineno||''))},true);
 window.addEventListener('DOMContentLoaded',function(){var d=document.createElement('pre');
 d.style.cssText='position:fixed;left:0;right:0;top:0;z-index:99;margin:0;padding:6px;background:#000c;color:#0f0;font:11px/1.3 monospace;white-space:pre-wrap;max-height:50vh;overflow:auto;pointer-events:none';document.body.appendChild(d);
-function upd(){d.textContent='v5 | THREE:'+(window.THREE?'ok':'no')+' | 3D:'+(window.__3d?'start':'no')+' | openGift:'+typeof window.openGift+' | vids: '+[].map.call(document.querySelectorAll('#vrow video'),function(v){return (v.getAttribute('src')||'').slice(0,12)+'/rs'+v.readyState+(v.error?'/E'+v.error.code:'')}).join(', ')+'\n'+L.join('\n')}
+function upd(){d.textContent='v7 | THREE:'+(window.THREE?'ok':'no')+' | 3D:'+(window.__3d?'start':'no')+' | openGift:'+typeof window.openGift+' | vids: '+[].map.call(document.querySelectorAll('#vrow video'),function(v){return (v.getAttribute('src')||'').slice(0,12)+'/rs'+v.readyState+(v.error?'/E'+v.error.code:'')}).join(', ')+'\n'+L.join('\n')}
 upd();setInterval(upd,1000)})})();
 </script>
 
@@ -125,20 +126,20 @@ var G=[
 {e:'👜',t:'Purse',a:['purse','bag','handbag','hand bag','parse','purs','पर्स','बैग'],
  h:['Ye wo cheez hai jiske bina ladkiyan ghar se nikalti hi nahi 😌','Isme phone, tissue, kangi aur na jaane kya kya rehta hai','Kandhe pe latkate hain ya haath me pakadte hain. Naam "P" se shuru hota hai']},
 {e:'🐒',t:'Monkey soft toy',d:'Bachpan wale dost ki yaad 🥹',a:['monkey','bandar','bander','banadar','vanar','monky','monkey toy','बंदर'],
- h:['Ye soft toy tumhara purana dost jaisa hai 🥹','Ye ped pe chadhta hai','English me naam "mon..." se shuru hota hai, Hindi me "ban..." se']},
+ h:['Ye soft toy tumhara purana dost jaisa hai🥹','Ye ped pe chadhta hai','English me naam "mon..." se shuru hota hai, Hindi me "ban..." se']},
 {e:'🐶',t:'Dog soft toy',a:['dog','kutta','kuta','puppy','doggy','kutiya','kutte','dog toy','कुत्ता'],
  h:['Ye sabse wafadaar dost hai, hamesha saath rehta hai 🥹','Ise insaan ka sabse achha dost kehte hain','Poonch hilata hai aur bhow bhow karta hai. English me "d_g", Hindi me "k_tta"']},
 {e:'💅',t:'Nails',d:'2 packets',a:['nail','nails','nailpaint','nail paint','nail art','nailart','nail extension','press on nails','nakhun','nakhoon','naakhun','नाखून'],
  h:['Ye tumhare haathon ko aur pyaara bana dega ✨','Ye 2 packets hain. Salon jaane ki zarurat hi nahi','Ungliyon pe lagte hain, rang aur design wale. English me "n_ils", Hindi me "nakhun"']},
 {e:'👗',t:'Kurti',d:'2 alag alag kurtis',a:['kurti','kurtis','kurta','kurtiyan','kurtiya','कुर्ती'],
- h:['Ye pehni jaati hai, aur tumhare liye ek nahi, do hain 😍','College ya function, ye dono me chal jaati hai','Dupatta ke saath bhi achhi lagti hai aur bina ke bhi. Naam "K" se shuru hota hai aur "i" pe khatam']},
+ h:['Ye pehni jaati hai, aur tumhare liye ek nahi, do hain 😍','Collegeya function, ye dono me chal jaati hai','Dupatta ke saath bhi achhi lagti hai aur bina ke bhi. Naam "K" se shuru hota hai aur "i" pe khatam']},
 {e:'🌸',t:'Perfume',a:['perfume','parfum','perfum','perfumes','scent','fragrance','deo','deodorant','itr','इत्र'],
  h:['Ye dikhta nahi, bas mehsoos hota hai 🌸','Tum kahin se guzro aur log palat ke dekhein, uski wajah ye hai','Chhidakte hain aur khushboo aati hai. English me "p_rf_me"']},
 {e:'💋',t:'Lip gloss',d:'Khushboo wala 🍓',a:['lip gloss','lipgloss','gloss','lip glos','lipglos','lip glow','लिप ग्लॉस'],
- h:['Ye chhoti si cheez purse me aaram se aa jaati hai 💋','jaha lagti hai waha chamak deti hai, aur isme khushboo bhi hai 🍓','Lipstick ki chamakdaar behen jaisi. English me "lip g___"']},
+ h:['Ye chhoti si cheez purse me aaram se aa jaati hai 💋','Jaha lagti hai use chamak deti hai, aur isme khushboo bhi hai 🍓','Lipstick ki chamakdaar behen jaisi. English me "lip g___"']},
 {e:'👖',t:'Skirt',d:'Jeans wali (denim) skirt',a:['skirt','skirts','skrit','skert','jeans skirt','denim skirt','mini skirt','jeans','denim','स्कर्ट'],
  h:['Ye bhi pehnne wali cheez hai, par kurti ya pant nahi hai','Ye kamar se neeche ki taraf jaati hai, aur isme dono pair alag alag nahi hote','Jeans ke kapde ki bani hai. Naam "S" se shuru hota hai. English me "s_irt"']},
 {e:'🐙',t:'Octopus soft toy',a:['octopus','octopuss','octopas','octapus','octo','ashtbhuja','ऑक्टोपस'],
  h:['Is soft toy ke haath bahut zyada hain. Kitne? Ginke batao 😄','Ye samundar me rehta hai aur iske 8 haath hote hain','Naam "O" se shuru hota hai. English me "octo..."']},
 {e:'💐',t:'Flower wala clutcher',a:['clutcher','clutch','clutchar','clip','hair clip','hairclip','claw clip','claw','jaw clip','banana clip','catcher','hair clutcher','क्लचर'],
- h:['Ye baalon ke liye hai 💐','Isme phool bane hain aur ye baalon ko ek jhatke me pakad leta hai','Hair clip jaisa hi hai, bas bada wala (claw). Naam "C" se shuru 
+ h:['Ye baalon ke liye hai 💐','Isme phool bane hain aur ye baalon ko ek jhatke me pakad leta hai','Hair clip jaisa hi
